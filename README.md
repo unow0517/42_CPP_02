@@ -1,4 +1,5 @@
 # 42_CPP_02
+classes in Orthodox Canonical Form? -> The classes must have Default Constructor, Copy Constructor, Copy Assignment Constructor, Destructor.
 
 ## What I Learn
 ### Fixed Point Numbers
