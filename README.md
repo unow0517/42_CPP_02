@@ -22,3 +22,30 @@ double add(double a, double b) {
 }
 ```
 "overload" refers to a feature that allows you to define **multiple functions or operators with the same name but different parameters**. 
+
+
+### `const` in function
+```c++
+int Fixed::getRawBits( void ) const
+{
+	return fpval;
+}
+```
+The const after getRawBits( void ) means that getRawBits will not modify any member variables of the Fixed class and is safe to call on const instances of Fixed.
+
+## `this`
+```c++
+void Fixed::setRawBits( int const raw)
+{
+	this->fpval = raw;
+}
+```
+
+```c++
+void Fixed::setRawBits( int const raw)
+{
+	fpval = raw;
+}
+```
+
+`this` is not neccessary to have in the member function in class, but it removes ambuiguity.
