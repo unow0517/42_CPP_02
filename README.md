@@ -1,7 +1,10 @@
 # 42_CPP_02
 classes in Orthodox Canonical Form? -> The classes must have Default Constructor, Copy Constructor, Copy Assignment Constructor, Destructor.
-make a class which saves a number in [Fixed Point Numbers](https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) type. 
+
+make a class which saves a number in [Fixed Point Numbers](https://web.archive.org/web/20231224143018/https://inst.eecs.berkeley.edu/~cs61c/sp06/handout/fixedpt.html) type.
 It seems like 16 bits are used to store the number in this project(8bits for integer, 8bits for fractional part), because integer to store the number of fractional bits are always 8.
+
+c++ can compare `10` and `42.42`, but we still do this practice to learn about fixed point numbers.
 
 ## What I Learn
 ### Fixed Point Numbers
