@@ -38,7 +38,7 @@ int Fixed::getRawBits( void ) const
 ```
 The const after getRawBits( void ) means that getRawBits will not modify any member variables of the Fixed class and is safe to call on const instances of Fixed.
 
-## `this`
+### `this`
 ```c++
 void Fixed::setRawBits( int const raw)
 {
@@ -53,9 +53,9 @@ void Fixed::setRawBits( int const raw)
 }
 ```
 
-`this` is not neccessary to have in the member function in class, but it removes ambuiguity.
+`this` is not neccessary to have in the member function in class, but it removes ambuiguity.<br/>
 
-## How `Int` and `Float` are saved in the class here.
+### How `Int` and `Float` are saved in the class here.
 In *ex01*, we save value `10` and `42.42`. the numbers should be bitwise shift by the value of fractional bits.
 
 10<sub>10</sub> << 8 = 1010<sub>2</sub> << 8 = 1010 0000 0000 = 2560<sub>10</sub>
@@ -64,5 +64,34 @@ In *ex01*, we save value `10` and `42.42`. the numbers should be bitwise shift b
 
 those values will be saved in the class, and with `toInt` and `toFloat` the values will be re-converted to decimal version.
 
+
+### Static member function in a class
+static member function belongs to a class not to an object. it can be called without an object is made.
+
+### Changing value even with `const`?
+
+```c++
+const Fixed	Fixed::operator++(int)
+{
+	const Fixed	ret(*this);
+
+	this->value++;
+	return (ret);
+}
+```
+
+in the code above, the object `ret` is `const`ed, not to the member of the object `ret`.
+
+to 'constify' all the member, do below:
+
+```c++
+const Fixed	Fixed::operator++(int) const
+{
+	const Fixed	ret(*this);
+
+	this->value++; // this throws error, because of last const keyword in function name
+	return (ret);
+}
+```
 
 
