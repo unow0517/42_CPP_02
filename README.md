@@ -49,3 +49,5 @@ void Fixed::setRawBits( int const raw)
 ```
 
 `this` is not neccessary to have in the member function in class, but it removes ambuiguity.
+
+
