@@ -113,8 +113,25 @@ Lvalues can be assigned to, rvalues cannot. You can take the address of an lvalu
 ### &
 still confusing, so putting together again.
 
-1. **Address-of Operator**
+**1.Address-of Operator**
 ```c++
 int x = 10;
 int* ptr = &x;  // &x gets the address of the lvalue `x`.
 ```
+ptr = address of x, *ptr = 10.
+
+**2.Reference Declaration**
+
+```c++
+int x = 10;
+int& ref = x;  // `ref' IS AN REFERENCE TO INTEGER, AND THE INTEGER IS `x`.
+```
+ref = 10, address of ref = address of x (lvalue reference)
+
+
+```c++
+int&& rref = 10;  // `rref` is an rvalue reference to the temporary `10`.
+```
+rref = 10; rref is an rvalue reference that can bind to temporary values or expressions. (rvalue reference)
+
+**3.
