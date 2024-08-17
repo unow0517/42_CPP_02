@@ -134,4 +134,3 @@ int&& rref = 10;  // `rref` is an rvalue reference to the temporary `10`.
 ```
 rref = 10; rref is an rvalue reference that can bind to temporary values or expressions. (rvalue reference)
 
-**3.
