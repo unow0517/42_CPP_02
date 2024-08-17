@@ -109,3 +109,12 @@ int y = x + 2; // `x + 2` is an rvalue; `y` is an lvalue.
 * rvalue : An rvalue is a temporary value that does not have a persistent memory address. Rvalues are often literals or results of operations that do not refer to a specific location in memory.
 
 Lvalues can be assigned to, rvalues cannot. You can take the address of an lvalue (e.g., using &x), but not of an rvalue.
+
+### &
+still confusing, so putting together again.
+
+1. **Address-of Operator**
+```c++
+int x = 10;
+int* ptr = &x;  // &x gets the address of the lvalue `x`.
+```
