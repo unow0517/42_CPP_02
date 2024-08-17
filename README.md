@@ -73,10 +73,10 @@ static member function belongs to a class not to an object. it can be called wit
 ```c++
 const Fixed	Fixed::operator++(int)
 {
-	const Fixed	ret(*this);
+	const Fixed	ret(*this); //copy this object 
 
-	this->value++;
-	return (ret);
+	this->value++; //increase this value
+	return (ret); //return copied object
 }
 ```
 
@@ -94,4 +94,18 @@ const Fixed	Fixed::operator++(int) const
 }
 ```
 
+The int parameter is part of the **C++ language design to distinguish post-increment from pre-increment**. The pre-increment operator does not need such a parameter, and adding one would cause ambiguity in the function signatures, conflicting with the intended use of post-increment. Hence, in C++, you cannot use an int parameter for pre-increment.
 
+### lvalue vs rvalue 
+
+```c++
+int x = 5;     // Here, `x` is an lvalue and `5` is an rvalue.
+x = 10;        // `x` is an lvalue; `10` is an rvalue.
+int* ptr = &x; // `&x` is an lvalue (address of x) and `ptr` is an lvalue.
+
+int y = x + 2; // `x + 2` is an rvalue; `y` is an lvalue.
+```
+* lvalue : An lvalue refers to an object that occupies some identifiable location in memory (i.e., it has an address). Lvalues are typically variables or objects that you can take the address of.
+* rvalue : An rvalue is a temporary value that does not have a persistent memory address. Rvalues are often literals or results of operations that do not refer to a specific location in memory.
+
+Lvalues can be assigned to, rvalues cannot. You can take the address of an lvalue (e.g., using &x), but not of an rvalue.
